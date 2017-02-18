@@ -1,0 +1,22 @@
+Shows IO for any process. HP-UX version counts input and output separately, and it counts read and write operations.
+Source code (source/pio.c) is included. If you edit the source file you will have to compile pio executable again
+by running:
+
+    cc -D_PSTAT64 -o pio pio.c
+
+More information at http://yong321.freeshell.org/freeware/pio.html
+
+Help message:
+
+        Usage: ./topio.pl [-s Delay] [-n Top_n_lines] [-k sortkey] [-h]
+            -s: Number of seconds delay between calls (default 5)
+            -n: Only show top n processes (default 10)
+            -k: sort key (default DltR)
+                R: DltR (delta reads);
+                I: Reads;
+                W: DltW (delta writes);
+                O: Writes
+                f: DltPF (delta page faults);
+                F: PF
+            -h: Show this Usage
+        Example (show top 3 processes every 2 seconds, sorted by DltW): perl ./topio.pl -s2 -n3 -kW
