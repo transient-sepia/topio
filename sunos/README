@@ -1,0 +1,16 @@
+Shows IO for any process. Solaris version lumps read and write characters together.
+Source code (source/pio.c) is included. If you edit the source file you will have to compile pio executable again
+by running:
+
+    gcc -o pio pio.c
+
+More information at http://yong321.freeshell.org/freeware/pio.html
+
+Help message:
+
+        Usage: ./topio.pl [-d] [-s Delay] [-n Top_n_lines] [-h]
+            -d: Show delta Read/Write Characters and delta Major Page Faults between
+            calls to pio
+            -s: Number of seconds delay between calls (default 5)
+            -n: Only show processes of top n RWChar or (if -d) deltaRWChar (default 10)
+            -h: Show this Usage
